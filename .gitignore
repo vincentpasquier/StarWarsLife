@@ -36,3 +36,4 @@ Thumbs.db
 # Eclipse
 .project
 .classpath
+.settings
