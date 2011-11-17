@@ -5,6 +5,6 @@
  */
 public class StarWarsLife {
 	public void main(String[] args){
-		//TODO : All is todo
+		System.out.print(args);
 	}
 }
