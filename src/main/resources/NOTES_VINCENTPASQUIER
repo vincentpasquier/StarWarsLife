@@ -1,0 +1,25 @@
+######################################
+Notes de vincentpasquier : 
+######################################
+
+Ajouts :
+- Classe ChoiceView
+- Enumeration ImageHelper (Singleton)
+- Game (interface)
+	-> Bergerie
+	-> StarWarsLife
+- EmptyCreature => éviter de tester interaction avec rien.
+
+Modifications :
+- CreatureMove, interface => classe abstraite
+- Displacement => Enumeration
+- View, Classe abstraite => interface
+
+Corrections :
+- Modificateurs (public => private)
+- Références rien à voir (Cell, ...)
+- Généralisation => implémentation (mauvaises flèches dans vp)
+- Noms de référence faux (unnamed)
+
+Idées :
+- Renommer Character en Creature ? (Mauvais nom de classe => java.lang.Character)

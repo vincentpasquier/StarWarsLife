@@ -37,3 +37,6 @@ Thumbs.db
 .project
 .classpath
 .settings
+
+# Bin directory
+bin/
