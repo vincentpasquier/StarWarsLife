@@ -1,8 +1,10 @@
 package ch.eia.simulife.commands;
 
+import ch.eia.simulife.creatures.Creature;
+
 public class Turn {
 
-	public Turn(Object aCharacter) {
-		throw new UnsupportedOperationException();
+	public Turn(Creature creaturea) {
+
 	}
 }

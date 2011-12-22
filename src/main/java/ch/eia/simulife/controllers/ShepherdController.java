@@ -1,12 +1,9 @@
 package ch.eia.simulife.controllers;
 
-public class ShepherdController implements SideController {
+import ch.eia.simulife.models.ShepherdModel;
 
-	public void playRound() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void createModel() {
-		throw new UnsupportedOperationException();
+public class ShepherdController extends SideController {
+	public ShepherdController() {
+		super(new ShepherdModel());
 	}
 }

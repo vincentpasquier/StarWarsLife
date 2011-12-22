@@ -1,10 +1,10 @@
 package ch.eia.simulife.models;
 
-import ch.eia.simulife.characters.Creature;
+import ch.eia.simulife.creatures.Creature;
 
 public interface SideModel {
 
-	public Creature selectCharacter();
+	Creature selectCreature();
 
-	public void creationCharacter();
+	void creationCreature();
 }

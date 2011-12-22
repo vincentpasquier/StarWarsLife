@@ -2,12 +2,13 @@ package ch.eia.simulife.views;
 
 import javax.swing.ImageIcon;
 
-import ch.eia.simulife.gamechoice.Game;
+import ch.eia.simulife.games.Game;
+import ch.eia.simulife.utils.ImageHelper;
 
-public class ConsoleView implements View {
+public class ConsoleView extends View {
 
 	@Override
-	public ImageIcon getViewIcon() {
+	public ImageIcon getImageIcon() {
 		return ImageHelper.INSTANCE.getImageIcon("console.png");
 	}
 

@@ -1,26 +1,30 @@
 package ch.eia.simulife.controllers;
 
-import ch.eia.simulife.SimuLife;
+import java.util.List;
+
+import ch.eia.simulife.games.Game;
+import ch.eia.simulife.models.GameModel;
 
 public class GameController {
 	private static final GameController INSTANCE = new GameController();
-	public GameController unnamed_GameController_;
-	public SimuLife unnamed_SimuLife_;
-	public SideController cSide;
+	// public SimuLife unnamed_SimuLife_; Voir si besoin ?
+	private List<SideController> cSide;
+	private Game game;
 
 	private GameController() {
-		throw new UnsupportedOperationException();
 	}
 
-	public GameController getInstance() {
+	public static GameController getInstance() {
 		return INSTANCE;
 	}
 
-	public void createGame() {
-		throw new UnsupportedOperationException();
+	public void createGame(Game game) {
+		this.game = game;
+		cSide = game.getSideControllers();
+		for (SideController ctrl : cSide)
+			GameModel.getInstance().addModel(ctrl.getModel());
 	}
 
 	public void nextRound() {
-		throw new UnsupportedOperationException();
 	}
 }

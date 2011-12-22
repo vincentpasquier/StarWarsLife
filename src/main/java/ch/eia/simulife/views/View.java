@@ -1,16 +1,20 @@
 package ch.eia.simulife.views;
 
-import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
 
-import ch.eia.simulife.gamechoice.Game;
+import ch.eia.simulife.games.ChoiceView;
+import ch.eia.simulife.games.Game;
+import ch.eia.simulife.games.Listable;
+import ch.eia.simulife.games.ViewButtonController;
 
-public interface View {
+public abstract class View implements Listable {
 	
-	ImageIcon getViewIcon();
-	
-	String getName();
+	@Override
+	public ActionListener getActionListener(ChoiceView vChoice) {
+		return new ViewButtonController(this, vChoice);
+	}
 
-	void startGame(Game game);
+	public abstract void startGame(Game game);
 
-	void nextRound();
+	public abstract void nextRound();
 }

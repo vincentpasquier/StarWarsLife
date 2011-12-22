@@ -1,12 +1,10 @@
 package ch.eia.simulife.controllers;
 
-public class FenceController implements SideController {
+import ch.eia.simulife.models.FenceModel;
 
-	public void playRound() {
-		throw new UnsupportedOperationException();
-	}
+public class FenceController extends SideController {
 
-	public void createModel() {
-		throw new UnsupportedOperationException();
+	public FenceController() {
+		super(new FenceModel());
 	}
 }

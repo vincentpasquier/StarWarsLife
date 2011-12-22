@@ -1,12 +1,9 @@
 package ch.eia.simulife.controllers;
 
-public class DogController implements SideController {
+import ch.eia.simulife.models.DogModel;
 
-	public void playRound() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void createModel() {
-		throw new UnsupportedOperationException();
+public class DogController extends SideController {
+	public DogController() {
+		super(new DogModel());
 	}
 }

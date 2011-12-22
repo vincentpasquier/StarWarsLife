@@ -1,12 +1,10 @@
 package ch.eia.simulife.controllers;
 
-public class WolfController implements SideController {
+import ch.eia.simulife.models.WolfModel;
 
-	public void playRound() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void createModel() {
-		throw new UnsupportedOperationException();
+public class WolfController extends SideController {
+	
+	public WolfController() {
+		super(new WolfModel());
 	}
 }

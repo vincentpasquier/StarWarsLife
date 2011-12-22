@@ -1,6 +1,6 @@
 package ch.eia.simulife.commands;
 
-import ch.eia.simulife.characters.Creature;
+import ch.eia.simulife.creatures.Creature;
 
 public class Action implements Command {
 

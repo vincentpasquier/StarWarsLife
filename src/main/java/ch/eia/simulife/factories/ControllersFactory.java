@@ -12,10 +12,10 @@ import ch.eia.simulife.controllers.MaleSheepController;
 import ch.eia.simulife.controllers.ShepherdController;
 import ch.eia.simulife.controllers.SideController;
 import ch.eia.simulife.controllers.WolfController;
-import ch.eia.simulife.gamechoice.Bergerie;
-import ch.eia.simulife.gamechoice.StarWarsLife;
+import ch.eia.simulife.games.Bergerie;
+import ch.eia.simulife.games.StarWarsLife;
 
-public class ControllersFactory {
+public final class ControllersFactory {
 
 	private static final int MAXIMUM_CONTROLLERS = 8;
 	private List<SideController> lSideControllers;

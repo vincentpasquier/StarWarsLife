@@ -1,14 +1,16 @@
 package ch.eia.simulife.models;
 
-import ch.eia.simulife.characters.Creature;
+import ch.eia.simulife.creatures.Creature;
 
 public class WolfModel implements SideModel {
 
-	public Creature selectCharacter() {
+	@Override
+	public Creature selectCreature() {
 		throw new UnsupportedOperationException();
 	}
 
-	public void creationCharacter() {
+	@Override
+	public void creationCreature() {
 		throw new UnsupportedOperationException();
 	}
 }

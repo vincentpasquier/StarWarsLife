@@ -1,12 +1,10 @@
 package ch.eia.simulife.controllers;
 
-public class EmpireController implements SideController {
+import ch.eia.simulife.models.EmpireModel;
 
-	public void playRound() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void createModel() {
-		throw new UnsupportedOperationException();
+public class EmpireController extends SideController {
+	
+	public EmpireController() {
+		super(new EmpireModel());
 	}
 }

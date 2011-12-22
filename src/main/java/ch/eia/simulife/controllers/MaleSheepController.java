@@ -1,12 +1,11 @@
 package ch.eia.simulife.controllers;
 
-public class MaleSheepController implements SideController {
+import ch.eia.simulife.models.MaleSheepModel;
 
-	public void playRound() {
-		throw new UnsupportedOperationException();
+public class MaleSheepController extends SideController {
+
+	public MaleSheepController() {
+		super(new MaleSheepModel());
 	}
 
-	public void createModel() {
-		throw new UnsupportedOperationException();
-	}
 }

@@ -1,13 +1,10 @@
 package ch.eia.simulife.controllers;
 
+import ch.eia.simulife.models.AllianceModel;
 
-public class AllianceController implements SideController {
+public class AllianceController extends SideController {
 
-	public void playRound() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void createModel() {
-		throw new UnsupportedOperationException();
+	public AllianceController() {
+		super(new AllianceModel());
 	}
 }

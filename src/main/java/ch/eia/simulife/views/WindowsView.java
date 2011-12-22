@@ -3,14 +3,16 @@ package ch.eia.simulife.views;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
-import ch.eia.simulife.gamechoice.Game;
+import ch.eia.simulife.games.Game;
+import ch.eia.simulife.utils.ImageHelper;
 
-public class WindowsView extends JFrame implements View {
+public class WindowsView extends View {
 
 	private static final long serialVersionUID = 761538419796761757L;
+	private JFrame frame;
 
 	public WindowsView() {
-		super();
+		frame = new JFrame();
 	}
 
 	@Override
@@ -19,7 +21,7 @@ public class WindowsView extends JFrame implements View {
 	}
 
 	@Override
-	public ImageIcon getViewIcon() {
+	public ImageIcon getImageIcon() {
 		return ImageHelper.INSTANCE.getImageIcon("gui.png");
 	}
 

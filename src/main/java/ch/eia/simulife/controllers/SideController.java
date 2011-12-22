@@ -1,8 +1,21 @@
 package ch.eia.simulife.controllers;
 
-public interface SideController {
+import ch.eia.simulife.commands.Turn;
+import ch.eia.simulife.models.SideModel;
 
-	public void playRound();
+public abstract class SideController {
 
-	public void createModel();
+	private SideModel model;
+
+	protected SideController(SideModel model) {
+		this.model = model;
+	}
+	
+	public void playRound() {
+		Turn turn = new Turn(model.selectCreature());
+	}
+
+	public SideModel getModel() {
+		return model;
+	}
 }
