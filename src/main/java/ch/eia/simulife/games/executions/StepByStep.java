@@ -2,9 +2,10 @@ package ch.eia.simulife.games.executions;
 
 import javax.swing.ImageIcon;
 
-import ch.eia.simulife.utils.ImageHelper;
+import ch.eia.simulife.controllers.GameController;
+import ch.eia.simulife.views.utils.ImageHelper;
 
-public class StepByStep extends Execution {
+public final class StepByStep extends Execution {
 
 	@Override
 	public ImageIcon getImageIcon() {
@@ -16,4 +17,8 @@ public class StepByStep extends Execution {
 		return "Step-by-step";
 	}
 
+	@Override
+	public void nextRound() {
+		GameController.INSTANCE.getView().askForNextRound(this);
+	}
 }

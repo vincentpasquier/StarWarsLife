@@ -1,10 +1,10 @@
 package ch.eia.simulife.controllers;
 
-import ch.eia.simulife.models.EmpireModel;
+import ch.eia.simulife.factories.CreatureFactory;
 
 public class EmpireController extends SideController {
-	
-	public EmpireController() {
-		super(new EmpireModel());
+
+	public EmpireController(CreatureFactory factory) {
+		super(factory);
 	}
 }

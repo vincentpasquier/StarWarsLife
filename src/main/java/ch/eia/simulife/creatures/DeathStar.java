@@ -1,22 +1,27 @@
 package ch.eia.simulife.creatures;
 
-import ch.eia.simulife.commands.CommandVisitor;
 import ch.eia.simulife.creatures.display.CreatureDisplay;
-import ch.eia.simulife.creatures.moves.NoMove;
+import ch.eia.simulife.creatures.moves.CreatureMove;
+import ch.eia.simulife.visitors.IVisitor;
 
 public final class DeathStar extends EmpireCreature {
 
-	protected DeathStar() {
-		super(new NoMove());
+	public DeathStar(CreatureMove move, CreatureDisplay display) {
+		super(move, display);
 	}
 
 	@Override
-	public CreatureDisplay getCreatureDisplay() {
-		return CreatureDisplay.DEATH_STAR;
+	public int getWidth() {
+		return 2;
 	}
 
 	@Override
-	public void accept(CommandVisitor visitor) {
+	public int getHeight() {
+		return 2;
+	}
+
+	@Override
+	public void accept(IVisitor visitor) {
 		visitor.visit(this);
 	}
 

@@ -1,22 +1,17 @@
 package ch.eia.simulife.creatures;
 
-import ch.eia.simulife.commands.CommandVisitor;
 import ch.eia.simulife.creatures.display.CreatureDisplay;
-import ch.eia.simulife.creatures.moves.DiagonalMove;
+import ch.eia.simulife.creatures.moves.CreatureMove;
+import ch.eia.simulife.visitors.IVisitor;
 
 public final class DarthVader extends EmpireCreature {
 
-	public DarthVader() {
-		super(new DiagonalMove());
+	public DarthVader(CreatureMove move, CreatureDisplay display) {
+		super(move, display);
 	}
-
+	
 	@Override
-	public CreatureDisplay getCreatureDisplay() {
-		return CreatureDisplay.DARTH_VADER;
-	}
-
-	@Override
-	public void accept(CommandVisitor visitor) {
+	public void accept(IVisitor visitor) {
 		visitor.visit(this);
 	}
 }

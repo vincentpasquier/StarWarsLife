@@ -1,22 +1,17 @@
 package ch.eia.simulife.creatures;
 
-import ch.eia.simulife.commands.CommandVisitor;
 import ch.eia.simulife.creatures.display.CreatureDisplay;
-import ch.eia.simulife.creatures.moves.CrossMove;
+import ch.eia.simulife.creatures.moves.CreatureMove;
+import ch.eia.simulife.visitors.IVisitor;
 
 public final class Stormtrooper extends EmpireCreature {
 
-	public Stormtrooper() {
-		super(new CrossMove());
+	public Stormtrooper(CreatureMove move, CreatureDisplay display) {
+		super(move, display);
 	}
 
 	@Override
-	public CreatureDisplay getCreatureDisplay() {
-		return CreatureDisplay.STORMTROOPER;
-	}
-
-	@Override
-	public void accept(CommandVisitor visitor) {
+	public void accept(IVisitor visitor) {
 		visitor.visit(this);
 	}
 }

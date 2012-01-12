@@ -1,29 +1,23 @@
 package ch.eia.simulife.games;
 
-import java.util.List;
+import javax.swing.ImageIcon;
 
-import ch.eia.simulife.board.Board;
-import ch.eia.simulife.controllers.SideController;
 import ch.eia.simulife.creatures.display.CreatureDisplay;
+import ch.eia.simulife.factories.GameFactory;
 
-public class StarWarsLife extends Game {
+public final class StarWarsLife extends Game {
 
-	public StarWarsLife() {
-		super(CreatureDisplay.DARTH_VADER);
+	public StarWarsLife(GameFactory fGame) {
+		super(fGame);
 	}
 
 	@Override
-	public List<SideController> getSideControllers() {
-		return fControllers.createController(this);
+	public ImageIcon getImageIcon() {
+		return CreatureDisplay.DARTH_VADER.getImageIcon();
 	}
 
 	@Override
 	public String getName() {
 		return "StarWarsLife";
-	}
-
-	@Override
-	public Board getBoard() {
-		return fBoards.createBoard(this);
 	}
 }

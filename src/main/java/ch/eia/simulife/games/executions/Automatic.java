@@ -2,9 +2,10 @@ package ch.eia.simulife.games.executions;
 
 import javax.swing.ImageIcon;
 
-import ch.eia.simulife.utils.ImageHelper;
+import ch.eia.simulife.games.Constants;
+import ch.eia.simulife.views.utils.ImageHelper;
 
-public class Automatic extends Execution {
+public final class Automatic extends Execution {
 
 	@Override
 	public ImageIcon getImageIcon() {
@@ -16,4 +17,14 @@ public class Automatic extends Execution {
 		return "Automatic";
 	}
 
+	@Override
+	public void nextRound() {
+		try {
+			Thread.sleep(Constants.PAUSE_TIME);
+			callback();
+		} catch (InterruptedException e) {
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
 }

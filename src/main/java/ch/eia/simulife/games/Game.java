@@ -1,44 +1,23 @@
 package ch.eia.simulife.games;
 
-import java.awt.event.ActionListener;
 import java.util.List;
 
-import javax.swing.ImageIcon;
-
 import ch.eia.simulife.board.Board;
+import ch.eia.simulife.controllers.GameOverChecker;
 import ch.eia.simulife.controllers.SideController;
-import ch.eia.simulife.creatures.display.CreatureDisplay;
-import ch.eia.simulife.factories.BoardsFactory;
-import ch.eia.simulife.factories.ControllersFactory;
+import ch.eia.simulife.factories.GameFactory;
 import ch.eia.simulife.games.executions.Execution;
 
 public abstract class Game implements Listable {
 
-	private final CreatureDisplay cDisplay;
 	private Execution execution;
-	protected final ControllersFactory fControllers;
-	protected final BoardsFactory fBoards;
+	protected final GameFactory fGame;
 
-	private static final int DEFAULT_BOARD_HEIGTH = 15;
-	private static final int DEFAULT_BOARD_WIDTH = 15;
+	private int bHeigth = Constants.DEFAULT_BOARD_HEIGTH;
+	private int bWidth = Constants.DEFAULT_BOARD_WIDTH;
 
-	private int bHeigth = DEFAULT_BOARD_HEIGTH;
-	private int bWidth = DEFAULT_BOARD_WIDTH;
-
-	protected Game(CreatureDisplay cDisplay) {
-		this.cDisplay = cDisplay;
-		this.fControllers = new ControllersFactory();
-		fBoards = new BoardsFactory();
-	}
-
-	@Override
-	public ActionListener getActionListener(ChoiceView vChoice) {
-		return new GameButtonController(this, vChoice);
-	}
-
-	@Override
-	public ImageIcon getImageIcon() {
-		return cDisplay.getImageIcon();
+	protected Game(GameFactory fGame) {
+		this.fGame = fGame;
 	}
 
 	public int getbHeigth() {
@@ -65,7 +44,22 @@ public abstract class Game implements Listable {
 		this.execution = execution;
 	}
 
-	public abstract List<SideController> getSideControllers();
+	public int getCreatureNumber() {
+		int creatureNumber = (getbHeigth() * getbWidth()) / Constants.DIVISION_FACTOR_CREATURE_NUMBER;
+		return (creatureNumber % 2 == 0) ? creatureNumber : creatureNumber + 1;
 
-	public abstract Board getBoard();
+	}
+
+	public List<SideController> getSideControllers() {
+		return fGame.getControllers();
+	}
+
+	public List<GameOverChecker> getGameOverCheckers() {
+		return fGame.getGameOverCheckers();
+	}
+
+	public Board createBoard() {
+		return fGame.createBoard(this);
+	}
+
 }

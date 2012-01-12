@@ -1,30 +1,24 @@
 package ch.eia.simulife.games;
 
-import java.util.List;
+import javax.swing.ImageIcon;
 
-import ch.eia.simulife.board.Board;
-import ch.eia.simulife.controllers.SideController;
 import ch.eia.simulife.creatures.display.CreatureDisplay;
+import ch.eia.simulife.factories.GameFactory;
 
 public final class Bergerie extends Game {
 
-	public Bergerie() {
-		super(CreatureDisplay.MALE_SHEEP);
+	public Bergerie(GameFactory fGame) {
+		super(fGame);
 	}
 
 	@Override
-	public List<SideController> getSideControllers() {
-		return fControllers.createController(this);
+	public ImageIcon getImageIcon() {
+		return CreatureDisplay.FEMALE_SHEEP.getImageIcon();
 	}
 
 	@Override
 	public String getName() {
 		return "La Bergerie";
-	}
-
-	@Override
-	public Board getBoard() {
-		return fBoards.createBoard(this);
 	}
 
 }

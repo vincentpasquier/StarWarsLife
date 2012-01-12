@@ -2,13 +2,11 @@ package ch.eia.simulife.creatures.display;
 
 import javax.swing.ImageIcon;
 
-import ch.eia.simulife.utils.ImageHelper;
-import ch.eia.simulife.views.ConsoleView;
-import ch.eia.simulife.views.WindowsView;
+import ch.eia.simulife.views.utils.ImageHelper;
 
 public enum CreatureDisplay {
-	MALE_SHEEP("M", ImageHelper.INSTANCE.getImageIcon("sheep.png")),
-	FEMALE_SHEEP("F", ImageHelper.INSTANCE.getImageIcon("sheep.png")),
+	FEMALE_SHEEP("F", ImageHelper.INSTANCE.getImageIcon("femalesheep.png")),
+	MALE_SHEEP("M", ImageHelper.INSTANCE.getImageIcon("malesheep.png")),
 	FENCE("#", ImageHelper.INSTANCE.getImageIcon("fence.png")),
 	WOLF("W", ImageHelper.INSTANCE.getImageIcon("wolf.png")),
 	SHEPHERD("S", ImageHelper.INSTANCE.getImageIcon("shepherd.png")),

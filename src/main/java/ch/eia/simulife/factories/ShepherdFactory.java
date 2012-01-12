@@ -4,13 +4,13 @@ import java.util.List;
 
 import ch.eia.simulife.creatures.Creature;
 
-public class ShepherdFactory implements CharactersFactory {
+public class ShepherdFactory extends CreatureFactory {
 
-	public List<Creature> createCharacters() {
-		throw new UnsupportedOperationException();
+	@Override
+	public List<Creature> createCreatures() {
+		List<Creature> lCreature = super.createCreatures();
+		lCreature.add(createShepherd());
+		return lCreature;
 	}
 
-	public List<Creature> createImmovableCharacter() {
-		throw new UnsupportedOperationException();
-	}
 }

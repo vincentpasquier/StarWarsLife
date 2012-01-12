@@ -1,22 +1,17 @@
 package ch.eia.simulife.creatures;
 
-import ch.eia.simulife.commands.CommandVisitor;
 import ch.eia.simulife.creatures.display.CreatureDisplay;
-import ch.eia.simulife.creatures.moves.AllMove;
+import ch.eia.simulife.creatures.moves.CreatureMove;
+import ch.eia.simulife.visitors.IVisitor;
 
 public final class Shepherd extends Creature {
 
-	public Shepherd() {
-		super(new AllMove());
+	public Shepherd(CreatureMove move, CreatureDisplay display) {
+		super(move, display);
 	}
 
 	@Override
-	public CreatureDisplay getCreatureDisplay() {
-		return CreatureDisplay.SHEPHERD;
-	}
-
-	@Override
-	public void accept(CommandVisitor visitor) {
+	public void accept(IVisitor visitor) {
 		visitor.visit(this);
 	}
 }

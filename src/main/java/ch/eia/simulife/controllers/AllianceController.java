@@ -1,10 +1,10 @@
 package ch.eia.simulife.controllers;
 
-import ch.eia.simulife.models.AllianceModel;
+import ch.eia.simulife.factories.CreatureFactory;
 
 public class AllianceController extends SideController {
 
-	public AllianceController() {
-		super(new AllianceModel());
+	public AllianceController(CreatureFactory factory) {
+		super(factory);
 	}
 }

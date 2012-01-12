@@ -1,9 +1,11 @@
 package ch.eia.simulife.controllers;
 
-import ch.eia.simulife.models.DogModel;
+import ch.eia.simulife.factories.CreatureFactory;
 
 public class DogController extends SideController {
-	public DogController() {
-		super(new DogModel());
+
+	public DogController(CreatureFactory factory) {
+		super(factory);
 	}
+
 }

@@ -1,21 +1,27 @@
 package ch.eia.simulife.controllers;
 
 import ch.eia.simulife.commands.Turn;
+import ch.eia.simulife.factories.CreatureFactory;
 import ch.eia.simulife.models.SideModel;
 
 public abstract class SideController {
 
-	private SideModel model;
+	private final SideModel model;
 
-	protected SideController(SideModel model) {
-		this.model = model;
+	protected SideController(CreatureFactory factory) {
+		model = new SideModel();
+		model.setCreatureFactory(factory);
 	}
-	
+
 	public void playRound() {
-		Turn turn = new Turn(model.selectCreature());
+		Turn turn = new Turn(model.selectCreature(), this);
+		turn.execute();
 	}
 
 	public SideModel getModel() {
 		return model;
+	}
+
+	public void checkIntegrity() {
 	}
 }
